@@ -1,4 +1,4 @@
-Zcash Daemon version v0.11.2.0.z8-a827003
+Zcash Daemon version v1.0.0-beta1
 
 Usage:
   zcashd [options]                     Start Zcash Daemon
@@ -28,22 +28,7 @@ Options:
   -conf=<file>
        Specify configuration file (default: zcash.conf)
 
-  -daemon
-       Run in the background as a daemon and accept commands
-
-  -datadir=<dir>
-       Specify data directory
-
-  -dbcache=<n>
-       Set database cache size in megabytes (4 to 16384, default: 100)
-
-  -loadblock=<file>
-       Imports blocks from external blk000??.dat file on startup
-
-  -maxorphantx=<n>
-       Keep at most <n> unconnectable transactions in memory (default: 100)
-
-  -par=<n>
+  --par=<n>
        Set the number of script verification threads (-4 to 16, 0 = auto, <0 =
        leave that many cores free, default: 0)
 
@@ -311,4 +296,3 @@ RPC SSL options: (see the Bitcoin Wiki for SSL setup instructions)
   -rpcsslciphers=<ciphers>
        Acceptable ciphers (default:
        TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)
-

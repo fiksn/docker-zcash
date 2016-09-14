@@ -7,7 +7,7 @@ Based on previous (great) work from [marsmensch/docker-zcash](https://github.com
 #### Build
 
 ```bash
-$ git clone https://github.com/ralphtheninja/docker-zcash && cd docker-zcash
+$ git clone https://github.com/fiksn/zcash && cd zcash
 $ docker build -t zcash .
 ```
 
@@ -20,11 +20,11 @@ $ docker run -d --name zcash -v ~/.zcash:/root/.zcash zcash
 #### Run commands
 
 ```bash
-$ docker exec -it zcash zcash-cli getinfo
-$ docker exec -it zcash zcash-cli getnewaddress
-$ docker exec -it zcash zcash-cli getpeerinfo
-$ docker exec -it zcash zcash-cli getblockcount
-$ docker exec -it zcash zcash-cli zcrawkeygen
+$ zcash-cli getinfo
+$ zcash-cli getnewaddress
+$ zcash-cli getpeerinfo
+$ zcash-cli getblockcount
+$ zcash-cli zcrawkeygen
 ```
 
 #### Stop/restart the daemon
