@@ -1,8 +1,8 @@
 build:
-	time docker build -t ralphtheninja/zcash .
+	time docker build -t fiksn/zcash .
 
 run:
-	docker run -d --name zcash -v ~/.zcash:/root/.zcash ralphtheninja/zcash
+	docker run -d --name zcash -v ~/.zcash:/root/.zcash fiksn/zcash
 
 start:
 	docker start zcash
@@ -14,4 +14,4 @@ rm:
 	docker rm -f zcash
 
 push:
-	docker push ralphtheninja/zcash
+	docker push fiksn/zcash

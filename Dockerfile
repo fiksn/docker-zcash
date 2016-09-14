@@ -1,17 +1,25 @@
-FROM debian:latest
-MAINTAINER Lars-Magnus Skog <ralphtheninja@riseup.net>
+FROM debian:jessie
+MAINTAINER Gregor Pogacnik <grega@pogacnik.net>
 
-ENV GIT_URL https://github.com/zcash/zcash.git
-ENV ZCASH_VERSION zc.v0.11.2.z8
+ARG GIT_URL=https://github.com/zcash/zcash.git
+ARG ZCASH_VERSION=v1.0.0-beta1
+ARG ZCASH_NET=betatestnet.z.cash
+ARG REFRESHED_AT=2016-09-15
+
+ENV GIT_URL ${GIT_URL}
+ENV ZCASH_VERSION ${ZCASH_VERSION}
+ENV REFRESHED_AT ${REFRESHED_AT}
+ENV ZCASH_NET ${ZCASH_NET}
 
 VOLUME /root/.zcash
 
-RUN apt-get update && apt-get -y upgrade && \
-    apt-get -y install build-essential pkg-config libgtest-dev libc6-dev m4 \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
+    apt-get -qqy install build-essential pkg-config libgtest-dev libc6-dev m4 \
     g++-multilib autoconf libtool ncurses-dev unzip git python \
-    zlib1g-dev wget bsdmainutils
+    zlib1g-dev wget bsdmainutils && \
+    rm -rf /tmp/* && apt-get clean
 
-RUN echo "check_certificate = off" > /root/.wgetrc && mkdir -p /opt/code/; cd /opt/code; \
+RUN mkdir -p /opt/code/; cd /opt/code; \
     git clone ${GIT_URL} zcash && cd zcash && git checkout ${ZCASH_VERSION} && \
     ./zcutil/fetch-params.sh && ./zcutil/build.sh -j$(nproc) && cd /opt/code/zcash/src && \
     /usr/bin/install zcashd zcash-cli -t /usr/local/bin/ && \

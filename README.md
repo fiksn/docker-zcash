@@ -1,10 +1,8 @@
-# docker-zcash
+# zcash
 
-Docker image for `zcash`. Currently for testnet only. Based on [marsmensch/docker-zcash](https://github.com/marsmensch/docker-zcash) with the following changes:
+Docker image for `zcash`. Currently for testnet only. 
 
-* uses `debian:latest` as base image
-* exposes `/root/.zcash` as a volume
-* only creates `/root/.zcash/zcash.conf` if it doesn't exist
+Based on previous (great) work from [marsmensch/docker-zcash](https://github.com/marsmensch/docker-zcash) and [ralphtheninja/docker-zcash](https://github.com/ralphtheninja/docker-zcash).
 
 #### Build
 
@@ -40,7 +38,7 @@ $ docker start zcash
 
 For more information check out the following links:
 
-* [Public Alpha Guide](https://github.com/zcash/zcash/wiki/Public-Alpha-Guide)
+* [Zcash Beta Guide](https://github.com/zcash/zcash/wiki/Beta-Guide)
 * [Zcash Main Repository](https://github.com/zcash/zcash)
 * [Zcash Forum](https://forum.z.cash/)
 * [Zcash Slack Community](https://inviteme.z.cash/)
