@@ -2,7 +2,7 @@ FROM debian:jessie
 MAINTAINER Gregor Pogacnik <grega@pogacnik.net>
 
 ARG GIT_URL=https://github.com/zcash/zcash.git
-ARG ZCASH_VERSION=v1.0.0-rc4
+ARG ZCASH_VERSION=v1.0.0
 ARG ZCASH_NET=testnet.z.cash
 ARG REFRESHED_AT=2016-10-28
 
