@@ -28,4 +28,4 @@ RUN mkdir -p /opt/code/; cd /opt/code; \
 ADD entrypoint.sh /
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["/usr/local/bin/zcashd"]
+CMD ["/usr/local/bin/zcashd", "-daemon"]
