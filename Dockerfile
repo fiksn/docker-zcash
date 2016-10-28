@@ -3,8 +3,8 @@ MAINTAINER Gregor Pogacnik <grega@pogacnik.net>
 
 ARG GIT_URL=https://github.com/zcash/zcash.git
 ARG ZCASH_VERSION=v1.0.0-rc4
-ARG ZCASH_NET=betatestnet.z.cash
-ARG REFRESHED_AT=2016-10-27
+ARG ZCASH_NET=testnet.z.cash
+ARG REFRESHED_AT=2016-10-28
 
 ENV GIT_URL ${GIT_URL}
 ENV ZCASH_VERSION ${ZCASH_VERSION}
