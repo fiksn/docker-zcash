@@ -2,9 +2,9 @@ FROM debian:jessie
 MAINTAINER Gregor Pogacnik <grega@pogacnik.net>
 
 ARG GIT_URL=https://github.com/zcash/zcash.git
-ARG ZCASH_VERSION=v1.0.0
+ARG ZCASH_VERSION=v1.0.2
 ARG ZCASH_NET=mainnet.z.cash
-ARG REFRESHED_AT=2016-10-28
+ARG REFRESHED_AT=2016-11-08
 
 ENV GIT_URL ${GIT_URL}
 ENV ZCASH_VERSION ${ZCASH_VERSION}
@@ -21,7 +21,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 
 RUN mkdir -p /opt/code/; cd /opt/code; \
     git clone ${GIT_URL} zcash && cd zcash && git checkout ${ZCASH_VERSION} && \
-    ./zcutil/fetch-params.sh && ./zcutil/build.sh -j$(nproc) && cd /opt/code/zcash/src && \
+    ./zcutil/fetch-params.sh &&./zcutil/build.sh -j$(nproc) && cd /opt/code/zcash/src && \
     /usr/bin/install zcashd zcash-cli -t /usr/local/bin/ && \
     rm -rf /opt/code/
 
